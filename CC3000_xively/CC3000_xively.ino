@@ -189,7 +189,7 @@ void sendData(Adafruit_CC3000_Client& client, String input, int chunkSize) {
   int length = input.length();
   int max_iteration = (int)(length/chunkSize);
   
-  for (int i = 0; i < length; i++) {
+  for (int i = 0; i <= max_iteration; i++) {
     client.print(input.substring(i*chunkSize, (i+1)*chunkSize));
     wdt_reset();
   }  
